@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>First page</title>
+</head>
+<style>
+ body
+ {
+        background-color: #d4a8d1 ;
+       padding-top:150px;
+ }
+ #xx
+ {
+        display:block;
+        margin:auto;
+        width:400px;
+       border:5px double black;
+       text-align:center;
+       background-color: #e5e813;
+       
+ }
+</style>
+<body>
+<div id="xx">
+<p id="demo">
+<form name="Myform" onsubmit="f1()" >
+Email--id <br><input type="text" name="email"><br><br>
+User-Name<br><input type="text" name="uname"><br><br>
+Password<br><input type="password" name="pass"><br><br><br>
+
+
+<input type="Submit" value="Submit"></form>
+</p>
+</div>
+<script>
+document.getElementById("demo");
+function f1()
+{
+        
+       var x=validate();
+       var a=document.getElementById("aa");
+        if(x)
+        {   window.open("snake.html");
+        }
+}
+
+function validate()
+{
+        var x=document.forms["Myform"]["email"].value;
+        var y=document.forms["Myform"]["pass"].value;
+        var z=document.forms["Myform"]["uname"].value;
+        
+                if(x=="")
+                        {
+                        alert("Please! Enter Email");
+                        return false;
+                        }
+                if(y=="")
+                {
+                        alert("Please! Enter Password");
+                        return false;
+                  }
+                 if(z=="")
+                 {
+                        alert("Please! Enter user-name");
+                        return false;
+                  }
+                 
+                 
+                if(y.length<10)
+                {
+                        alert("Invalid Password!(length should be greater than 10)");
+                        return false;
+                 }
+                        
+                var n1=x.search("@");
+               //var n2=x.search(".")
+                if(n1==-1)
+                        {
+                                alert("Invalid Email");
+                                return false;
+                        }
+               if(x.indexOf(".")==-1)
+                        {
+                                alert("Invalid Email");
+                                return false;
+                        }
+        var format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+        
+        if(!format.test(y+"1"))
+        {
+        alert("Invalid Password!(ADD atleast one special character)");
+        return false;
+        }
+         var pattern = /^\d+$/;
+        if(!(/\d/.test(y)))
+         {
+                alert(" Add at least one digit");
+                return false;
+        }       
+        
+        return true;
+        
+       
+        
+        
+}
+</script>
+
+
+</body>

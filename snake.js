@@ -1,7 +1,7 @@
 var snakex=2;
 var snakey=2;
-var height=30;
-var width=30;
+var height=20;
+var width=20;
 var interval=100;
 var increement=1;
 
@@ -22,6 +22,7 @@ function run()
 }
 function init()
 {
+        
         createMap();
         createSnake();
         createFruit();
@@ -149,10 +150,14 @@ function update()
         if(gameover)
         {
        alert("Game over .Your Score is "+score1);
-       document.write("GameOver");
+       document.getElementById("over").style.visibility="visible";
+      // over();
        }
 }
+function over()
+{
 
+}
 function updateTail()
 {
         for(var i=length;i>0;i--)
